@@ -3,12 +3,15 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class Enemy : MonoBehaviour {
-    public int health = 100;
+    public EnemyTypes enemyType;
+    public int health;
     public float moveSpeed;
 
     Rigidbody2D m_rb;
 
     private void Start() {
+        health = enemyType.health;
+        moveSpeed = enemyType.moveSpeed;
         m_rb = GetComponent<Rigidbody2D>();
     }
 

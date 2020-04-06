@@ -19,7 +19,6 @@ public class GameManager : MonoBehaviour {
             spawnTimer = cooldown;
         }
         spawnTimer -= Time.deltaTime;
-        
     }
 
     void SpawnEnemy(int min, int max) {

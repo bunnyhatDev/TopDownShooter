@@ -1,6 +1,8 @@
 ﻿using UnityEngine;
 
 public class Bullet : MonoBehaviour {
+    public float bulletDamage;
+
     private Transform target;
     private float speed = 10f;
 
@@ -40,7 +42,7 @@ public class Bullet : MonoBehaviour {
 
     void OnCollisionEnter2D(Collision2D other) {
         if(other.gameObject.tag == "Enemy") {
-            other.gameObject.GetComponent<Enemy>().health -= 100;
+            other.gameObject.GetComponent<Enemy>().health -= (int)bulletDamage;
             Destroy(gameObject);
         }
     }
