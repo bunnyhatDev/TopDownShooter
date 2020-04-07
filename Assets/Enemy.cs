@@ -10,7 +10,11 @@ public class Enemy : MonoBehaviour {
 
     Rigidbody2D m_rb;
 
+    GameManager m_gm;
+
     private void Start() {
+        m_gm = GameObject.FindGameObjectWithTag("GameManager").GetComponent<GameManager>();
+
         health = enemyType.health;
         moveSpeed = enemyType.moveSpeed;
         m_rb = GetComponent<Rigidbody2D>();
@@ -20,6 +24,7 @@ public class Enemy : MonoBehaviour {
         healthText.text = health.ToString();
         if (health <= 0) {
             health = 0;
+            m_gm.killCount += 1;
             Destroy(gameObject);
         } else {
             m_rb.velocity = new Vector2(0f, -moveSpeed);

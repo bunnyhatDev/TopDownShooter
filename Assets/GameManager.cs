@@ -1,11 +1,17 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class GameManager : MonoBehaviour {
     public Transform[] enemySpawners;
     public GameObject[] enemyTypes;
     public float spawnTimer;
+
+    public int killCount;
+
+    [Header("UI Elements")]
+    public Slider levelProgress;
 
     private float cooldown;
 
@@ -14,6 +20,7 @@ public class GameManager : MonoBehaviour {
     }
 
     private void Update() {
+        levelProgress.value = killCount;
         if(spawnTimer <= 0) {
             SpawnEnemy(0, enemySpawners.Length);
             spawnTimer = cooldown;
