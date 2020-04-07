@@ -40,7 +40,7 @@ public class Bullet : MonoBehaviour {
         return;
     }
 
-    void OnCollisionEnter2D(Collision2D other) {
+    void OnTriggerEnter2D(Collider2D other) {
         if(other.gameObject.tag == "Enemy") {
             other.gameObject.GetComponent<Enemy>().health -= (int)bulletDamage;
             Destroy(gameObject);
