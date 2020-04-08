@@ -1481,10 +1481,10 @@ RectTransform:
   m_Father: {fileID: 1238825100}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 1}
-  m_AnchorMax: {x: 0.5, y: 1}
-  m_AnchoredPosition: {x: 0, y: -1840}
-  m_SizeDelta: {x: 1060, y: 85.9}
+  m_AnchorMin: {x: 0.5, y: 0}
+  m_AnchorMax: {x: 0.5, y: 0}
+  m_AnchoredPosition: {x: 0, y: 80}
+  m_SizeDelta: {x: 1060, y: 85}
   m_Pivot: {x: 0.5, y: 1}
 --- !u!114 &2033600839
 MonoBehaviour:
@@ -1580,6 +1580,7 @@ MonoBehaviour:
   - {fileID: 566945817074544334, guid: 95b243fed6601804989575ed2cbbc314, type: 3}
   - {fileID: 8776203606815680707, guid: 506189c86c1c4744e8dd89b31ddba02a, type: 3}
   spawnTimer: 0.5
+  gameState: 0
   killCount: 0
   levelProgress: {fileID: 2033600839}
 --- !u!4 &2050712411

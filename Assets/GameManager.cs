@@ -3,10 +3,16 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
+public enum GAME_STATE {
+    ENEMY_WAVE, BOSS_WAVE
+}
+
 public class GameManager : MonoBehaviour {
     public Transform[] enemySpawners;
     public GameObject[] enemyTypes;
     public float spawnTimer;
+
+    public GAME_STATE gameState;
 
     public int killCount;
 
@@ -17,15 +23,29 @@ public class GameManager : MonoBehaviour {
 
     private void Start() {
         cooldown = spawnTimer;
+
+        gameState = GAME_STATE.ENEMY_WAVE;
     }
 
     private void Update() {
         levelProgress.value = killCount;
-        if(spawnTimer <= 0) {
-            SpawnEnemy(0, enemySpawners.Length);
-            spawnTimer = cooldown;
+
+        switch(gameState) {
+            case GAME_STATE.ENEMY_WAVE:
+                if(spawnTimer <= 0) {
+                    SpawnEnemy(0, enemySpawners.Length);
+                    spawnTimer = cooldown;
+                }
+                spawnTimer -= Time.deltaTime;
+
+                if(killCount >= 5) {
+                    gameState = GAME_STATE.BOSS_WAVE;
+                }
+                break;
+
+            case GAME_STATE.BOSS_WAVE:
+                break;
         }
-        spawnTimer -= Time.deltaTime;
     }
 
     void SpawnEnemy(int min, int max) {
