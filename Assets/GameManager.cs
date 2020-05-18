@@ -26,11 +26,15 @@ public class GameManager : MonoBehaviour {
     public GAME_STATE gameState;
 
     public int killCount;
+    public int world, level;
+    public int coins;
+    public float exp, dps;
     //public float messageTimer = 2.5f;
 
     [Header("UI Elements")]
     public Slider levelProgress;
     public TextMeshProUGUI stateMessage;
+    public TextMeshProUGUI levelText, coinsText, expText, dpsText;
 
     private float cooldown;
 
@@ -41,10 +45,16 @@ public class GameManager : MonoBehaviour {
     }
 
     private void Update() {
-        levelProgress.value = killCount;
+        Debug.Log("Kill count = " + killCount + " | " + "GState = " + gameState);
 
-        switch(gameState) {
+        levelText.text = "World: " + world + '\n' + "Level: " + level;
+        coinsText.text = coins.ToString();
+        expText.text = exp.ToString();
+        dpsText.text = dps.ToString() + " dps";
+
+        switch (gameState) {
             case GAME_STATE.ENEMY_WAVE:
+                levelProgress.value = killCount;
                 //DisplayText("Enemy Wave");
                 if (spawnTimer <= 0) {
                     SpawnEnemy(0, enemySpawners.Length);
@@ -52,7 +62,7 @@ public class GameManager : MonoBehaviour {
                 }
                 spawnTimer -= Time.deltaTime;
 
-                if(killCount >= 15) {
+                if(levelProgress.value == levelProgress.maxValue - 1) {
                     //DisplayText("Boss Wave");
                     gameState = GAME_STATE.BOSS_WAVE;
                 }
