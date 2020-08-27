@@ -45,7 +45,7 @@ public class GameManager : MonoBehaviour {
     }
 
     private void Update() {
-        Debug.Log("Kill count = " + killCount + " | " + "GState = " + gameState);
+        //Debug.Log("Kill count = " + killCount + " | " + "GState = " + gameState);
 
         levelText.text = "World: " + world + '\n' + "Level: " + level;
         coinsText.text = coins.ToString();
@@ -61,9 +61,11 @@ public class GameManager : MonoBehaviour {
                     spawnTimer = cooldown;
                 }
                 spawnTimer -= Time.deltaTime;
+                Debug.Log("level progress: " + levelProgress.value);
 
-                if(levelProgress.value == levelProgress.maxValue - 1) {
+                if(levelProgress.value == levelProgress.maxValue) {
                     //DisplayText("Boss Wave");
+                    Debug.Log("Boss Wave");
                     gameState = GAME_STATE.BOSS_WAVE;
                 }
                 break;

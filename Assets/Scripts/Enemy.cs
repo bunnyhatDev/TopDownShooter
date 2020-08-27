@@ -24,7 +24,9 @@ public class Enemy : MonoBehaviour {
         healthText.text = health.ToString();
         if (health <= 0) {
             health = 0;
+            
             m_gm.killCount += 1;
+
             Destroy(gameObject);
         } else {
             m_rb.velocity = new Vector2(0f, -moveSpeed);

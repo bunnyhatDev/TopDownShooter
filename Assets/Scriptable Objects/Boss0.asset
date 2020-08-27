@@ -13,5 +13,6 @@ MonoBehaviour:
   m_Name: Boss0
   m_EditorClassIdentifier: 
   bossName: Boss0
+  ability: 0
   moveSpeed: 0
   health: 0
