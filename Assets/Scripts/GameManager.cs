@@ -80,12 +80,12 @@ public class GameManager : MonoBehaviour {
             case GAME_STATE.BOSS_WAVE:
                 //Damage to boss happens here. If boss HP = 0 then go to Next Wave game state.
                 Debug.Log("boss getting damaged here!");
-                gameState = GAME_STATE.NEXT_LEVEL;
                 break;
 
             case GAME_STATE.NEXT_LEVEL:
                 Debug.Log("next enemy wave incoming!!");
                 spawnedEnemies = 0;
+                level += 1;
                 levelProgress.value = levelProgress.minValue;
                 levelProgress.maxValue += 2;
                 gameState = GAME_STATE.ENEMY_WAVE;

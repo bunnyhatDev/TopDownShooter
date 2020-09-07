@@ -65,10 +65,16 @@ public class TurretBehaviour : MonoBehaviour {
         if(collision.tag == "Enemy") {
             inRange = true;
         }
+        if (collision.tag == "Boss") {
+            inRange = true;
+        }
     }
 
     private void OnTriggerExit2D(Collider2D collision) {
         if(collision.tag == "Enemy") {
+            inRange = false;
+        }
+        if (collision.tag == "Boss") {
             inRange = false;
         }
     }

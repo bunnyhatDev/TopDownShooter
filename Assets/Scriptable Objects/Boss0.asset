@@ -9,10 +9,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 85c7eb5dddef8c14fa2213ef814a5e86, type: 3}
+  m_Script: {fileID: 11500000, guid: be354dbd07e1db845bd8b17464e69d75, type: 3}
   m_Name: Boss0
   m_EditorClassIdentifier: 
-  bossName: Boss0
-  ability: 0
-  moveSpeed: 0
-  health: 0
+  enemyName: Boss 0
+  moveSpeed: 0.5
+  health: 25

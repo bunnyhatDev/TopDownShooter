@@ -19,15 +19,14 @@ public class Bullet : MonoBehaviour {
     }
 
     void Update() {
-        if(target == null) {
+/*        if(target == null) {
             Destroy(gameObject);
             return;
-        }
+        }*/
 
         float disThisFrame = speed * Time.deltaTime;
 
         if (dir.magnitude <= disThisFrame) {
-            Debug.Log("hi");
             HitTarget();
             return;
         }
@@ -43,6 +42,14 @@ public class Bullet : MonoBehaviour {
     void OnTriggerEnter2D(Collider2D other) {
         if(other.gameObject.tag == "Enemy") {
             other.gameObject.GetComponent<Enemy>().health -= (int)bulletDamage;
+            Destroy(gameObject);
+        }
+        if (other.gameObject.tag == "Boss") {
+            other.gameObject.GetComponent<Enemy>().health -= (int)bulletDamage;
+            Destroy(gameObject);
+        }
+
+        if (other.gameObject.name == "Bounds") {
             Destroy(gameObject);
         }
     }

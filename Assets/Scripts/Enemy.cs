@@ -24,8 +24,12 @@ public class Enemy : MonoBehaviour {
         healthText.text = health.ToString();
         if (health <= 0) {
             health = 0;
-            
-            m_gm.levelProgress.value += 1;
+
+            if (gameObject.tag == "Enemy") {
+                m_gm.levelProgress.value += 1;
+            } else {
+                m_gm.gameState = GAME_STATE.NEXT_LEVEL;
+            }
 
             Destroy(gameObject);
         } else {

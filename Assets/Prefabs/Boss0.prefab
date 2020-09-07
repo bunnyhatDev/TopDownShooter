@@ -123,7 +123,7 @@ GameObject:
   - component: {fileID: 8700219023410646779}
   m_Layer: 0
   m_Name: Boss0
-  m_TagString: Enemy
+  m_TagString: Boss
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -258,7 +258,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 79fb1a64318325c45b0842416fa658b8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  enemyType: {fileID: 11400000, guid: e289027cca4754446b7b72379a6a64c7, type: 2}
+  enemyType: {fileID: 11400000, guid: aa354345edf5a704b8ef7ef596ebb7ce, type: 2}
   health: 0
   healthText: {fileID: 1132917440905960314}
   moveSpeed: 0
