@@ -25,7 +25,7 @@ public class Boss : MonoBehaviour {
         if(health <= 0) {
             health = 0;
             
-            m_gm.killCount += 1;
+            m_gm.levelProgress.value += 1;
             m_gm.world += 1;
             m_gm.level = 1;
 

@@ -131,7 +131,7 @@ GameObject:
   m_Component:
   - component: {fileID: 301596203}
   m_Layer: 0
-  m_Name: GameObject
+  m_Name: SpawnPoint (0)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -210,7 +210,6 @@ MonoBehaviour:
   m_Material: {fileID: 0}
   m_Color: {r: 0.2830189, g: 0.2830189, b: 0.2830189, a: 0.7647059}
   m_RaycastTarget: 1
-  m_Maskable: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
@@ -284,7 +283,6 @@ MonoBehaviour:
   m_Material: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
-  m_Maskable: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
@@ -523,7 +521,6 @@ MonoBehaviour:
   m_Material: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
-  m_Maskable: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
@@ -637,7 +634,7 @@ GameObject:
   m_Component:
   - component: {fileID: 659575850}
   m_Layer: 0
-  m_Name: GameObject (7)
+  m_Name: SpawnPoint (6)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -709,7 +706,6 @@ MonoBehaviour:
   m_Material: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
-  m_Maskable: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
@@ -865,7 +861,6 @@ MonoBehaviour:
   m_Material: {fileID: 0}
   m_Color: {r: 0.560856, g: 0.990566, b: 0.3504361, a: 1}
   m_RaycastTarget: 1
-  m_Maskable: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
@@ -939,7 +934,6 @@ MonoBehaviour:
   m_Material: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 0.38431373}
   m_RaycastTarget: 1
-  m_Maskable: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
@@ -971,7 +965,7 @@ GameObject:
   m_Component:
   - component: {fileID: 790580600}
   m_Layer: 0
-  m_Name: GameObject (1)
+  m_Name: SpawnPoint (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1342,7 +1336,6 @@ MonoBehaviour:
   m_Material: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
-  m_Maskable: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
@@ -1456,7 +1449,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1296980996}
   m_Layer: 0
-  m_Name: GameObject (9)
+  m_Name: SpawnPoint (9)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1474,7 +1467,7 @@ Transform:
   m_LocalScale: {x: 0.5, y: 0.5, z: 0.5}
   m_Children: []
   m_Father: {fileID: 2050712411}
-  m_RootOrder: 8
+  m_RootOrder: 9
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1357686992
 GameObject:
@@ -1528,7 +1521,6 @@ MonoBehaviour:
   m_Material: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
-  m_Maskable: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
@@ -1644,7 +1636,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1401048458}
   m_Layer: 0
-  m_Name: GameObject (5)
+  m_Name: SpawnPoint (5)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1658,11 +1650,11 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1401048457}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.2, y: 5.29, z: 0}
+  m_LocalPosition: {x: 0, y: 5.29, z: 0}
   m_LocalScale: {x: 0.5, y: 0.5, z: 0.5}
   m_Children: []
   m_Father: {fileID: 2050712411}
-  m_RootOrder: 4
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1431297453
 GameObject:
@@ -1716,7 +1708,6 @@ MonoBehaviour:
   m_Material: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
-  m_Maskable: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
@@ -2025,7 +2016,6 @@ MonoBehaviour:
   m_Material: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
-  m_Maskable: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
@@ -2057,7 +2047,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1676248417}
   m_Layer: 0
-  m_Name: GameObject (4)
+  m_Name: SpawnPoint (4)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2075,7 +2065,7 @@ Transform:
   m_LocalScale: {x: 0.5, y: 0.5, z: 0.5}
   m_Children: []
   m_Father: {fileID: 2050712411}
-  m_RootOrder: 5
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1682618533
 GameObject:
@@ -2213,7 +2203,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1753619542}
   m_Layer: 0
-  m_Name: GameObject (3)
+  m_Name: SpawnPoint (3)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2285,7 +2275,6 @@ MonoBehaviour:
   m_Material: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
-  m_Maskable: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
@@ -2317,7 +2306,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1783583838}
   m_Layer: 0
-  m_Name: GameObject (2)
+  m_Name: SpawnPoint (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2389,7 +2378,6 @@ MonoBehaviour:
   m_Material: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
-  m_Maskable: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
@@ -2487,7 +2475,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1982065640}
   m_Layer: 0
-  m_Name: GameObject (8)
+  m_Name: SpawnPoint (8)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2505,7 +2493,7 @@ Transform:
   m_LocalScale: {x: 0.5, y: 0.5, z: 0.5}
   m_Children: []
   m_Father: {fileID: 2050712411}
-  m_RootOrder: 9
+  m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &2025225319
 GameObject:
@@ -2517,7 +2505,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2025225320}
   m_Layer: 0
-  m_Name: GameObject (6)
+  m_Name: SpawnPoint (7)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2620,7 +2608,7 @@ MonoBehaviour:
   m_HandleRect: {fileID: 1766895694}
   m_Direction: 0
   m_MinValue: 0
-  m_MaxValue: 5
+  m_MaxValue: 2
   m_WholeNumbers: 1
   m_Value: 0
   m_OnValueChanged:
@@ -2660,18 +2648,19 @@ MonoBehaviour:
   - {fileID: 790580600}
   - {fileID: 1783583838}
   - {fileID: 1753619542}
-  - {fileID: 1401048458}
   - {fileID: 1676248417}
+  - {fileID: 1401048458}
   - {fileID: 659575850}
   - {fileID: 2025225320}
-  - {fileID: 1296980996}
   - {fileID: 1982065640}
+  - {fileID: 1296980996}
   enemyTypes:
   - {fileID: 566945817074544334, guid: 95b243fed6601804989575ed2cbbc314, type: 3}
   - {fileID: 8776203606815680707, guid: 506189c86c1c4744e8dd89b31ddba02a, type: 3}
   spawnTimer: 0.5
+  bossTypes:
+  - {fileID: 8776203606815680707, guid: 9e47f7fb7bb7e294da9cbb3cb4be3029, type: 3}
   gameState: 0
-  killCount: 0
   world: 0
   level: 1
   coins: 0
@@ -2698,12 +2687,12 @@ Transform:
   - {fileID: 790580600}
   - {fileID: 1783583838}
   - {fileID: 1753619542}
-  - {fileID: 1401048458}
   - {fileID: 1676248417}
+  - {fileID: 1401048458}
   - {fileID: 659575850}
   - {fileID: 2025225320}
-  - {fileID: 1296980996}
   - {fileID: 1982065640}
+  - {fileID: 1296980996}
   m_Father: {fileID: 0}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}

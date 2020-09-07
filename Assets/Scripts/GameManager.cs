@@ -9,6 +9,7 @@ public enum GAME_STATE {
     ENEMY_WAVE, 
     //Once number of enemies have reached to a certain level progression, enemies stop
     // spawning and a Boss will spawn.
+    SPAWN_BOSS,
     BOSS_WAVE, 
     //Once boss is defeated, level += 1, give XP, increase enemy count
     // and will change state to enemey wave.
@@ -22,10 +23,10 @@ public class GameManager : MonoBehaviour {
     public Transform[] enemySpawners;
     public GameObject[] enemyTypes;
     public float spawnTimer;
+    public GameObject[] bossTypes;
 
     public GAME_STATE gameState;
 
-    public int killCount;
     public int world, level;
     public int coins;
     public float exp, dps;
@@ -37,6 +38,7 @@ public class GameManager : MonoBehaviour {
     public TextMeshProUGUI levelText, coinsText, expText, dpsText;
 
     private float cooldown;
+    private int spawnedEnemies;
 
     private void Start() {
         cooldown = spawnTimer;
@@ -54,23 +56,39 @@ public class GameManager : MonoBehaviour {
 
         switch (gameState) {
             case GAME_STATE.ENEMY_WAVE:
-                levelProgress.value = killCount;
+                //levelProgress.value = killCount;
                 //DisplayText("Enemy Wave");
-                if (spawnTimer <= 0) {
-                    SpawnEnemy(0, enemySpawners.Length);
-                    spawnTimer = cooldown;
+                if (spawnedEnemies != levelProgress.maxValue) {
+                    if (spawnTimer <= 0) {
+                        SpawnEnemy(0, enemySpawners.Length);
+                        spawnTimer = cooldown;
+                    }
                 }
                 spawnTimer -= Time.deltaTime;
-                Debug.Log("level progress: " + levelProgress.value);
+                //Debug.Log("level progress: " + levelProgress.value);
+                Debug.Log(spawnedEnemies + " spawned enemies");
 
                 if(levelProgress.value == levelProgress.maxValue) {
-                    //DisplayText("Boss Wave");
-                    Debug.Log("Boss Wave");
-                    gameState = GAME_STATE.BOSS_WAVE;
+                    gameState = GAME_STATE.SPAWN_BOSS;
                 }
                 break;
 
+            case GAME_STATE.SPAWN_BOSS:
+                SpawnBoss();
+                break;
+
             case GAME_STATE.BOSS_WAVE:
+                //Damage to boss happens here. If boss HP = 0 then go to Next Wave game state.
+                Debug.Log("boss getting damaged here!");
+                gameState = GAME_STATE.NEXT_LEVEL;
+                break;
+
+            case GAME_STATE.NEXT_LEVEL:
+                Debug.Log("next enemy wave incoming!!");
+                spawnedEnemies = 0;
+                levelProgress.value = levelProgress.minValue;
+                levelProgress.maxValue += 2;
+                gameState = GAME_STATE.ENEMY_WAVE;
                 break;
         }
     }
@@ -78,7 +96,21 @@ public class GameManager : MonoBehaviour {
     void SpawnEnemy(int min, int max) {
         int spawnpoint = Random.Range(min, max);
         int enemy = Random.Range(min, enemyTypes.Length);
-        Instantiate(enemyTypes[enemy], enemySpawners[spawnpoint].position, enemySpawners[spawnpoint].rotation);
+
+        if(levelProgress.value != levelProgress.maxValue) {
+            Instantiate(enemyTypes[enemy], enemySpawners[spawnpoint].position, enemySpawners[spawnpoint].rotation);
+            spawnedEnemies += 1;
+        }
+    }
+
+    void SpawnBoss() {
+        //Spawn the type of boss, set it's HP depending on level here.
+        Debug.Log("Boss Wave");
+
+        int boss = Random.Range(0, bossTypes.Length);
+
+        Instantiate(bossTypes[boss], enemySpawners[5].position, enemySpawners[5].rotation);
+        gameState = GAME_STATE.BOSS_WAVE;
     }
 
     //void DisplayText(string messageType) {
