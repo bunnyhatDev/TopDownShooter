@@ -39,6 +39,7 @@ public class Enemy : MonoBehaviour {
 
     private void OnTriggerEnter2D(Collider2D collision) {
         if(collision.name == "Deadzone") {
+            m_gm.gameState = GAME_STATE.RESTART_WAVE;
             Destroy(this.gameObject);
         }
     }

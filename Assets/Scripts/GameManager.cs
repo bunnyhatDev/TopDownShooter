@@ -11,6 +11,8 @@ public enum GAME_STATE {
     // spawning and a Boss will spawn.
     SPAWN_BOSS,
     BOSS_WAVE, 
+    //If wave fails at enemy wave or boss wave from them reaching the turret, then level must restart
+    RESTART_WAVE, 
     //Once boss is defeated, level += 1, give XP, increase enemy count
     // and will change state to enemey wave.
     NEXT_LEVEL, 
@@ -35,7 +37,7 @@ public class GameManager : MonoBehaviour {
     [Header("UI Elements")]
     public Slider levelProgress;
     public TextMeshProUGUI stateMessage;
-    public TextMeshProUGUI levelText, coinsText, expText, dpsText;
+    public TextMeshProUGUI levelText, counterText, coinsText, expText, dpsText;
 
     private float cooldown;
     private int spawnedEnemies;
@@ -58,15 +60,16 @@ public class GameManager : MonoBehaviour {
             case GAME_STATE.ENEMY_WAVE:
                 //levelProgress.value = killCount;
                 //DisplayText("Enemy Wave");
+                counterText.text = "Enemies Remaining: " + (levelProgress.maxValue - levelProgress.value);
                 if (spawnedEnemies != levelProgress.maxValue) {
+                    spawnTimer -= Time.deltaTime;
                     if (spawnTimer <= 0) {
                         SpawnEnemy(0, enemySpawners.Length);
                         spawnTimer = cooldown;
                     }
                 }
-                spawnTimer -= Time.deltaTime;
                 //Debug.Log("level progress: " + levelProgress.value);
-                Debug.Log(spawnedEnemies + " spawned enemies");
+                //Debug.Log(spawnedEnemies + " spawned enemies");
 
                 if(levelProgress.value == levelProgress.maxValue) {
                     gameState = GAME_STATE.SPAWN_BOSS;
@@ -79,15 +82,28 @@ public class GameManager : MonoBehaviour {
 
             case GAME_STATE.BOSS_WAVE:
                 //Damage to boss happens here. If boss HP = 0 then go to Next Wave game state.
-                Debug.Log("boss getting damaged here!");
+                Debug.Log("Boss getting damaged here!");
+                counterText.text = "Boss Incoming!";
                 break;
 
             case GAME_STATE.NEXT_LEVEL:
                 Debug.Log("next enemy wave incoming!!");
                 spawnedEnemies = 0;
                 level += 1;
+                if(level == 6) {
+                    world += 1;
+                    level = 1;
+                }
                 levelProgress.value = levelProgress.minValue;
                 levelProgress.maxValue += 2;
+                gameState = GAME_STATE.ENEMY_WAVE;
+                break;
+
+            case GAME_STATE.RESTART_WAVE:
+                Debug.LogWarning("Wave will restart!");
+                levelProgress.value = 0;
+                spawnTimer = cooldown;
+                spawnedEnemies = 0;
                 gameState = GAME_STATE.ENEMY_WAVE;
                 break;
         }
