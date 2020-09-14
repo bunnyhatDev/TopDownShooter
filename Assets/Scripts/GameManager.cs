@@ -30,7 +30,7 @@ public class GameManager : MonoBehaviour {
     public GAME_STATE gameState;
 
     public int world, level;
-    public int coins;
+    public int totalCoins;
     public float exp, dps;
     //public float messageTimer = 2.5f;
 
@@ -38,6 +38,10 @@ public class GameManager : MonoBehaviour {
     public Slider levelProgress;
     public TextMeshProUGUI stateMessage;
     public TextMeshProUGUI levelText, counterText, coinsText, expText, dpsText;
+
+    [Header("Shop Menu")]
+    public Toggle shopToggle;
+    public GameObject shopWindow;
 
     private float cooldown;
     private int spawnedEnemies;
@@ -52,7 +56,7 @@ public class GameManager : MonoBehaviour {
         //Debug.Log("Kill count = " + killCount + " | " + "GState = " + gameState);
 
         levelText.text = "World: " + world + '\n' + "Level: " + level;
-        coinsText.text = coins.ToString();
+        coinsText.text = totalCoins.ToString();
         expText.text = exp.ToString();
         dpsText.text = dps.ToString() + " dps";
 
@@ -106,6 +110,12 @@ public class GameManager : MonoBehaviour {
                 spawnedEnemies = 0;
                 gameState = GAME_STATE.ENEMY_WAVE;
                 break;
+        }
+
+        if(shopToggle.isOn) {
+            shopWindow.SetActive(true);
+        } else {
+            shopWindow.SetActive(false);
         }
     }
 

@@ -15,3 +15,4 @@ MonoBehaviour:
   enemyName: Enemy 1
   moveSpeed: 1
   health: 10
+  coins: 2

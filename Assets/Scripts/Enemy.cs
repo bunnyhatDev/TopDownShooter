@@ -25,6 +25,8 @@ public class Enemy : MonoBehaviour {
         if (health <= 0) {
             health = 0;
 
+            m_gm.totalCoins += enemyType.coins;
+
             if (gameObject.tag == "Enemy") {
                 m_gm.levelProgress.value += 1;
             } else {

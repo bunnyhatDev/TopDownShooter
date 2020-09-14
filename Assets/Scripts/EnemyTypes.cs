@@ -7,4 +7,5 @@ public class EnemyTypes : ScriptableObject {
     public string enemyName;
     public float moveSpeed;
     public int health;
+    public int coins;
 }
