@@ -94,6 +94,7 @@ public class GameManager : MonoBehaviour {
                 Debug.Log("next enemy wave incoming!!");
                 spawnedEnemies = 0;
                 level += 1;
+                exp += 1;
                 if(level == 6) {
                     world += 1;
                     level = 1;
