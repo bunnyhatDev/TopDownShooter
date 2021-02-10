@@ -105,6 +105,7 @@ public class GameManager : MonoBehaviour {
                 break;
 
             case GAME_STATE.RESTART_WAVE:
+                //FIXME: restarting of level just puts the bar at the bottom at 0, enemies still come in from where they were prior to game ending
                 Debug.LogWarning("Wave will restart!");
                 levelProgress.value = 0;
                 spawnTimer = cooldown;

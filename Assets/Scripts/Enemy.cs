@@ -39,10 +39,15 @@ public class Enemy : MonoBehaviour {
         }
     }
 
+    public static void KillMe() {
+        Debug.Log("i died yay!");
+    }
+
     private void OnTriggerEnter2D(Collider2D collision) {
         if(collision.name == "Deadzone") {
             m_gm.gameState = GAME_STATE.RESTART_WAVE;
-            Destroy(this.gameObject);
+            Enemy.KillMe();
+            //Destroy(this.gameObject);
         }
     }
 }
