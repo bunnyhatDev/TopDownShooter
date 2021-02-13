@@ -2784,7 +2784,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   target: {fileID: 0}
   fireRate: 1
-  bulletPrefab: {fileID: 8228656535153784216, guid: 63a8aa0943a521c40bcf7b0479bb55d4,
+  bulletPrefab: {fileID: 1948268858211166952, guid: 63a8aa0943a521c40bcf7b0479bb55d4,
     type: 3}
 --- !u!61 &950553752
 BoxCollider2D:
@@ -4590,7 +4590,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   target: {fileID: 0}
   fireRate: 1
-  bulletPrefab: {fileID: 8228656535153784216, guid: 63a8aa0943a521c40bcf7b0479bb55d4,
+  bulletPrefab: {fileID: 1948268858211166952, guid: 63a8aa0943a521c40bcf7b0479bb55d4,
     type: 3}
 --- !u!61 &1516147024
 BoxCollider2D:
@@ -5212,7 +5212,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   target: {fileID: 0}
   fireRate: 1
-  bulletPrefab: {fileID: 8228656535153784216, guid: 63a8aa0943a521c40bcf7b0479bb55d4,
+  bulletPrefab: {fileID: 1948268858211166952, guid: 63a8aa0943a521c40bcf7b0479bb55d4,
     type: 3}
 --- !u!61 &1682618537
 BoxCollider2D:
