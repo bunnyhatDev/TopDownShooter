@@ -86,12 +86,12 @@ public class GameManager : MonoBehaviour {
 
             case GAME_STATE.BOSS_WAVE:
                 //Damage to boss happens here. If boss HP = 0 then go to Next Wave game state.
-                Debug.Log("Boss getting damaged here!");
+                //Debug.Log("Boss getting damaged here!");
                 counterText.text = "Boss Incoming!";
                 break;
 
             case GAME_STATE.NEXT_LEVEL:
-                Debug.Log("next enemy wave incoming!!");
+                //Debug.Log("next enemy wave incoming!!");
                 spawnedEnemies = 0;
                 level += 1;
                 exp += 1;
@@ -107,6 +107,12 @@ public class GameManager : MonoBehaviour {
             case GAME_STATE.RESTART_WAVE:
                 //FIXME: restarting of level just puts the bar at the bottom at 0, enemies still come in from where they were prior to game ending
                 Debug.LogWarning("Wave will restart!");
+                foreach (GameObject go in GameObject.FindGameObjectsWithTag("Enemy")) {
+                    SimplePool.Despawn(go);
+                }
+                foreach (GameObject go in GameObject.FindGameObjectsWithTag("Boss")) {
+                    SimplePool.Despawn(go);
+                }
                 levelProgress.value = 0;
                 spawnTimer = cooldown;
                 spawnedEnemies = 0;
@@ -126,18 +132,17 @@ public class GameManager : MonoBehaviour {
         int enemy = Random.Range(min, enemyTypes.Length);
 
         if(levelProgress.value != levelProgress.maxValue) {
-            Instantiate(enemyTypes[enemy], enemySpawners[spawnpoint].position, enemySpawners[spawnpoint].rotation);
+            SimplePool.Spawn(enemyTypes[enemy], enemySpawners[spawnpoint].position, enemySpawners[spawnpoint].rotation);
             spawnedEnemies += 1;
         }
     }
 
     void SpawnBoss() {
         //Spawn the type of boss, set it's HP depending on level here.
-        Debug.Log("Boss Wave");
-
+        //Debug.Log("Boss Wave");
         int boss = Random.Range(0, bossTypes.Length);
 
-        Instantiate(bossTypes[boss], enemySpawners[5].position, enemySpawners[5].rotation);
+        SimplePool.Spawn(bossTypes[boss], enemySpawners[5].position, enemySpawners[5].rotation);
         gameState = GAME_STATE.BOSS_WAVE;
     }
 

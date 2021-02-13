@@ -25,9 +25,16 @@ public class Boss : MonoBehaviour {
         if(health <= 0) {
             health = 0;
 
-            Destroy(gameObject);
+            SimplePool.Despawn(gameObject);
         } else {
             m_rb.velocity = new Vector2(0f, -moveSpeed);
+        }
+    }
+
+    private void OnTriggerEnter2D(Collider2D collision) {
+        if (collision.name == "Deadzone") {
+            health = bossType.health;
+            m_gm.gameState = GAME_STATE.RESTART_WAVE;
         }
     }
 
