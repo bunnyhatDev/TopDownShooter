@@ -58,6 +58,7 @@ public class GameManager : MonoBehaviour {
         levelText.text = "World: " + world + '\n' + "Level: " + level;
         coinsText.text = totalCoins.ToString();
         expText.text = exp.ToString();
+        //dps = GameObject.FindGameObjectWithTag("Bullet").GetComponent<Bullet>().bulletDamage;
         dpsText.text = dps.ToString() + " dps";
 
         switch (gameState) {

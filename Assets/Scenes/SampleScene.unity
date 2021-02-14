@@ -5834,7 +5834,8 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 0}
+  m_Sprite: {fileID: 1845506616830867990, guid: 038610f423c2b2c499c5c4292386dac7,
+    type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -6465,7 +6466,6 @@ MonoBehaviour:
   level: 1
   totalCoins: 0
   exp: 0
-  dps: 0
   levelProgress: {fileID: 2033600839}
   stateMessage: {fileID: 682772897}
   levelText: {fileID: 1357686994}
