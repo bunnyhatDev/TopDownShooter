@@ -53,7 +53,7 @@ public class TurretBehaviour : MonoBehaviour {
     }
 
     void Shoot() {
-        GameObject bulletGO = (GameObject)SimplePool.Spawn(bulletPrefab, this.transform.position, this.transform.rotation);
+        GameObject bulletGO = (GameObject)Instantiate(bulletPrefab, this.transform.position, this.transform.rotation);
         Bullet bullet = bulletGO.GetComponent<Bullet>();
 
         if(bullet != null) {

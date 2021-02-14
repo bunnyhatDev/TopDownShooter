@@ -28,14 +28,14 @@ RectTransform:
   m_GameObject: {fileID: 1173526943756694305}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 4, y: 4, z: 4}
   m_Children: []
   m_Father: {fileID: 4881432271086206271}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 0.7}
+  m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!23 &6918547563383996245
@@ -95,7 +95,7 @@ TextMesh:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1173526943756694305}
-  m_Text: 10
+  m_Text: 25
   m_OffsetZ: 0
   m_CharacterSize: 0.01
   m_LineSpacing: 1
@@ -120,9 +120,10 @@ GameObject:
   - component: {fileID: 4881432271086206271}
   - component: {fileID: 8776203606815680705}
   - component: {fileID: 8776203606815680719}
-  - component: {fileID: 8776203606815680716}
-  - component: {fileID: 8776203606815680704}
+  - component: {fileID: 4136322956527969621}
   - component: {fileID: 8700219023410646779}
+  - component: {fileID: -6981426093691837653}
+  - component: {fileID: 5397449735022902402}
   m_Layer: 0
   m_Name: Boss0
   m_TagString: Boss
@@ -190,9 +191,9 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 5
-  m_Sprite: {fileID: 5169845019003147658, guid: 038610f423c2b2c499c5c4292386dac7,
+  m_Sprite: {fileID: -4556899741528890791, guid: 39e4e5d55b973894a8bf68f5f8953cb4,
     type: 3}
-  m_Color: {r: 1, g: 0, b: 0, a: 1}
+  m_Color: {r: 0.9811321, g: 0.19900322, b: 0.35477394, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -223,8 +224,8 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 4
---- !u!61 &8776203606815680716
-BoxCollider2D:
+--- !u!58 &4136322956527969621
+CircleCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -237,19 +238,33 @@ BoxCollider2D:
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
-  m_SpriteTilingProperty:
-    border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 1.136, y: 0.98}
-    newSize: {x: 0.988, y: 0.988}
-    adaptiveTilingThreshold: 0.5
-    drawMode: 0
-    adaptiveTiling: 0
-  m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.988, y: 0.988}
-  m_EdgeRadius: 0
---- !u!114 &8776203606815680704
+  m_Radius: 2.1060278
+--- !u!222 &8700219023410646779
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8776203606815680707}
+  m_CullTransparentMesh: 1
+--- !u!114 &-6981426093691837653
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8776203606815680707}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: aee8f7476eb6b3342af987452c1302bc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  bossType: {fileID: 11400000, guid: aa354345edf5a704b8ef7ef596ebb7ce, type: 2}
+  health: 25
+  healthText: {fileID: 1132917440905960314}
+  moveSpeed: 0
+--- !u!114 &5397449735022902402
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -265,11 +280,3 @@ MonoBehaviour:
   health: 0
   healthText: {fileID: 1132917440905960314}
   moveSpeed: 0
---- !u!222 &8700219023410646779
-CanvasRenderer:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8776203606815680707}
-  m_CullTransparentMesh: 1

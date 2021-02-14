@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class Boss : MonoBehaviour {
-    public BossTypes bossType;
+    public EnemyTypes bossType;
     public int health;
     public TextMesh healthText;
     public float moveSpeed;
@@ -23,10 +23,13 @@ public class Boss : MonoBehaviour {
     private void Update() {
         healthText.text = health.ToString();
         if(health <= 0) {
+            gameObject.tag = "Boss";
             health = 0;
 
             SimplePool.Despawn(gameObject);
+            m_gm.gameState = GAME_STATE.NEXT_LEVEL;
         } else {
+            gameObject.tag = "ActiveBoss";
             m_rb.velocity = new Vector2(0f, -moveSpeed);
         }
     }

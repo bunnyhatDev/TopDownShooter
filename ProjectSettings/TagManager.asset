@@ -8,6 +8,8 @@ TagManager:
   - GameManager
   - Boss
   - Bullet
+  - ActiveEnemy
+  - ActiveBoss
   layers:
   - Default
   - TransparentFX
