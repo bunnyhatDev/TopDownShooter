@@ -45,8 +45,9 @@ public class GameManager : MonoBehaviour {
 
     private float cooldown;
     private int spawnedEnemies;
-
+    
     private void Start() {
+        SimplePool.Preload(enemyTypes[0], 10);
         cooldown = spawnTimer;
 
         gameState = GAME_STATE.ENEMY_WAVE;
@@ -133,7 +134,7 @@ public class GameManager : MonoBehaviour {
         int enemy = Random.Range(min, enemyTypes.Length);
 
         if(levelProgress.value != levelProgress.maxValue) {
-            SimplePool.Spawn(enemyTypes[enemy], enemySpawners[spawnpoint].position, enemySpawners[spawnpoint].rotation);
+            SimplePool.Spawn(enemyTypes[0], enemySpawners[spawnpoint].position, enemySpawners[spawnpoint].rotation);
             spawnedEnemies += 1;
         }
     }

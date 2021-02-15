@@ -50,6 +50,7 @@ TextureImporter:
   isReadable: 0
   streamingMipmaps: 0
   streamingMipmapsPriority: 0
+  vTOnly: 0
   grayScaleToAlpha: 0
   generateCubemap: 6
   cubemapConvolution: 0
@@ -81,9 +82,12 @@ TextureImporter:
   textureType: 8
   textureShape: 1
   singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
   maxTextureSizeSet: 0
   compressionQualitySet: 0
   textureFormatSet: 0
+  ignorePngGamma: 0
   applyGammaDecoding: 1
   platformSettings:
   - serializedVersion: 3
@@ -237,10 +241,10 @@ TextureImporter:
       name: v793-ning-18_4
       rect:
         serializedVersion: 2
-        x: 116
-        y: 100
-        width: 494
-        height: 494
+        x: 48
+        y: 396
+        width: 264
+        height: 264
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -271,6 +275,27 @@ TextureImporter:
       bones: []
       spriteID: 11ed835d503c7ee50800000000000000
       internalID: 6838648989004914193
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: v793-ning-18_8
+      rect:
+        serializedVersion: 2
+        x: 286
+        y: 163
+        width: 292
+        height: 132
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c18ca9118551699e0800000000000000
+      internalID: -1615079948369082340
       vertices: []
       indices: 
       edges: []

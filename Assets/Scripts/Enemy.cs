@@ -33,7 +33,7 @@ public class Enemy : MonoBehaviour {
                 m_gm.gameState = GAME_STATE.NEXT_LEVEL;
             }
 
-            Destroy(gameObject);
+            SimplePool.Despawn(this.gameObject);
         } else {
             m_rb.velocity = new Vector2(0f, -moveSpeed);
         }
