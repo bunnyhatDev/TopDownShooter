@@ -66,7 +66,7 @@ public class GameManager : MonoBehaviour {
             case GAME_STATE.ENEMY_WAVE:
                 //levelProgress.value = killCount;
                 //DisplayText("Enemy Wave");
-                counterText.text = "Enemies Remaining: " + (levelProgress.maxValue - levelProgress.value);
+                counterText.text = (levelProgress.maxValue - levelProgress.value).ToString();
                 if (spawnedEnemies != levelProgress.maxValue) {
                     spawnTimer -= Time.deltaTime;
                     if (spawnTimer <= 0) {
